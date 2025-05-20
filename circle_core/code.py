@@ -39,7 +39,7 @@ class Circle:
         """
         perimeter = 2 * math.pi * self.radius
         return perimeter
-
+        
     def circle_area(self) -> float:
         """
         Рассчитываем площадь круга
@@ -49,11 +49,11 @@ class Circle:
         Пример:
         >>> y = Circle(2)
         >>> y.circle_area().__round__(2)
-        25.13
+        12.57
         """
         s = math.pi * math.pow(self.radius, 2)
         return s
-
+        
     def get_chord_length(self) -> float:
         """
         Рассчитываем хорду окружности
