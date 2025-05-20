@@ -1,3 +1,8 @@
+# Geometric Figures Calculator
+
+[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://python.org)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
 # Geometric Figures
 
 Этот репозиторий содержит 3 директории. В каждой из них размещен класс, отвечающий за нахождение площади, периметра и прочих геометрических свойств фигур, указанных по названию класса соответственно. 
