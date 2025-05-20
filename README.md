@@ -21,7 +21,7 @@
 - находить периметр прямоугольника `get_rectangle_perimeter()`
 - находить диагональ прямоугольника `get_rectangle_diagonal()`
 
-## Примеры использования класса Circle с каждым методом класса
+## Использование класса Circle
 ```bash
 find_circle_per = Circle(5)
 show_circle_perimeter = find_circle_per.circle_perimeter().__round__(2)
@@ -35,7 +35,7 @@ find_chord = Circle(2, 40)
 show_chord_length = find_chord.get_chord_length().__round__(2)
 print(show_chord_length)
 ```
-## Примеры использования класса Triangle с каждым методом класса
+## Использование класса Triangle
 ```bash
 get_info = Triangle(19, 20, 25)                  
 show_info = get_info.get_basic_info()            
@@ -45,7 +45,7 @@ get_height = Triangle(10, 5, 8)
 show_height = get_height.get_triangle_height()   
 print(show_height)                              
 ```
-## Примеры использования класса Rectangle с каждым методом класса
+## Использование класса Rectangle
 ```bash
 find_rec_area = Rectangle(4, 5)                                   
 show_rec_area = find_rec_area.get_rectangle_area()                
