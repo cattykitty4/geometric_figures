@@ -12,17 +12,17 @@
 - находить хорду окружности
 
 **Пример использования кода:**
-find_circle_per = Circle(5)                                              # создание экземпляра класса
-show_circle_perimeter = find_circle_per.circle_perimeter().__round__(2)  # вызов метода класса circle_perimeter() c округлением до двух знаков
-print(show_circle_perimeter)                                             # предполагаемый результат 31.42
+- find_circle_per = Circle(5)                                              # создание экземпляра класса
+- show_circle_perimeter = find_circle_per.circle_perimeter().__round__(2)  # вызов метода класса circle_perimeter() c округлением до двух знаков
+- print(show_circle_perimeter)                                             # предполагаемый результат 31.42
 
-find_circle_area = Circle(5)
-show_circle_perimeter = find_circle_area.circle_area()
-print(round(show_circle_area, 2))                                        # предполагаемый результат 56.55
+- find_circle_area = Circle(5)
+- show_circle_perimeter = find_circle_area.circle_area()
+- print(round(show_circle_area, 2))                                        # предполагаемый результат 56.55
 
-find_chord = Circle(2, 40)
-show_chord_length = find_chord.get_chord_length().__round__(2)
-print(show_chord_length)                                                 # предполагаемый результат 1.37
+- find_chord = Circle(2, 40)
+- show_chord_length = find_chord.get_chord_length().__round__(2)
+- print(show_chord_length)                                                 # предполагаемый результат 1.37
 
 
 ## 📦 Установка
