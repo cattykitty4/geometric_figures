@@ -51,7 +51,7 @@ class Circle:
         >>> y.circle_area().__round__(2)
         25.13
         """
-        s = 2 * math.pi * math.pow(self.radius, 2)
+        s = math.pi * math.pow(self.radius, 2)
         return s
 
     def get_chord_length(self) -> float:
