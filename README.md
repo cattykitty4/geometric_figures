@@ -25,6 +25,7 @@
 
 ## Использование класса Circle
 ```bash
+from geometric_figures import Circle
 find_circle_per = Circle(5)
 show_circle_perimeter = find_circle_per.circle_perimeter().__round__(2)
 print(show_circle_perimeter)
