@@ -11,12 +11,16 @@ class Triangle:
         :param c_side: Сторона c
 
         Примеры:
-        >>> x = Triangle(4, 5, 6)
-        >>> y = Triangle(7, 8, 9)
+        >>> x = Triangle(4, 5, 6)       # корректное создание объекта
+        >>> y = Triangle(7, 8, 9)       # корректное создание объекта
+        >>> j = Triangle('7', '8', '9') # некорректное создание объекта
+        Traceback (most recent call last):
+        ...
+        ValueError: Длина одной стороны треугольника не может превосходить сумму длин двух других его сторон.
         """
         # Производится проверка на правило "Неравенства треугольника"
         if a_side + b_side < c_side or a_side + c_side < b_side or b_side + c_side < a_side:
-            raise 'Длина одной стороны треугольника не может превосходить сумму длин двух других его сторон.'
+            raise ValueError('Длина одной стороны треугольника не может превосходить сумму длин двух других его сторон.')
 
         # Производится проверка на корректность вводимых данных
         if not isinstance(a_side, (int, float)):
@@ -41,8 +45,7 @@ class Triangle:
         """
         half_perimeter = (self.a_side + self.b_side + self.c_side) / 2
         area = math.sqrt(half_perimeter *
-                         (half_perimeter - self.a_side) * (half_perimeter - self.b_side) * (
-                                     half_perimeter - self.c_side))
+            (half_perimeter - self.a_side) * (half_perimeter - self.b_side) * (half_perimeter - self.c_side))
 
         return half_perimeter, half_perimeter * 2, round(area, 2)
 
