@@ -6,7 +6,6 @@ class Rectangle:
 
     # передаем два аргумента в конструктор класса
     def __init__(self, height: float = 1.0, length: float = 1.0):
-
         """
         Создание и подготовка к работе объекта "Прямоугольник"
 
@@ -14,8 +13,12 @@ class Rectangle:
         :param length: Ширина прямоугольника
 
         Примеры:
-        >>> x = Rectangle(1, 2)  # инициализация экземпляра класса
-        >>> y = Rectangle(4, 5)  # инициализация экземпляра класса
+        >>> x = Rectangle(1, 2)  # корректное создание объекта
+        >>> y = Rectangle(4, 5)  # корректное создание объекта
+        >>> j = Rectangle('5', '6') # некорректное создание объекта
+        Traceback (most recent call last):
+        ...
+        TypeError: Вводимый результат должен быть флоатером или целым числом
         """
 
         if not isinstance(height, (int, float)):
@@ -34,7 +37,6 @@ class Rectangle:
 
     # создаем метод экземпляра класса (т.к. есть self)
     def get_rectangle_area(self) -> float:
-
         """
         Рассчитываем площадь прямоугольника.
 
@@ -50,7 +52,6 @@ class Rectangle:
         return self.area
 
     def get_rectangle_perimeter(self) -> float:
-
         """
         Рассчитываем периметр прямоугольника.
 
@@ -61,15 +62,13 @@ class Rectangle:
         >>> y.get_rectangle_perimeter()
         14
         """
-
+        
         self.perimeter = 2 * (self.length + self.height)
         return self.perimeter
 
     def get_rectangle_diagonal(self) -> float:
-
         """
         Рассчитываем диагональ прямоугольника
-        :param half_perimeter: Полупериметр прямоугольника
         :return: Получаем диагональ
 
         Пример:
@@ -77,9 +76,11 @@ class Rectangle:
         >>> y.get_rectangle_diagonal()
         5.0
         """
-
-        half_perimeter = self.get_rectangle_perimeter() / 2
-        rectangle_diagonal = math.sqrt((half_perimeter ** 2) - (2 * self.get_rectangle_area()))
+        
+        half_perimeter = self.get_rectangle_perimeter() / 2  # высчитывается полупериметр прямоугольника
+        
+        rectangle_diagonal = math.sqrt((half_perimeter ** 2) # высчитывается диагональ прямоугольника
+                                       - (2 * self.get_rectangle_area()))
         return rectangle_diagonal
 
 
