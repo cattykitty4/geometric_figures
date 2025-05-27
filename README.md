@@ -26,6 +26,7 @@
 ## Использование класса Circle
 ```bash
 from geometric_figures import Circle
+
 find_circle_per = Circle(5)
 show_circle_perimeter = find_circle_per.circle_perimeter().__round__(2)
 print(show_circle_perimeter)
@@ -40,6 +41,8 @@ print(show_chord_length)
 ```
 ## Использование класса Triangle
 ```bash
+from geometric_figures import Triangle
+
 get_info = Triangle(19, 20, 25)                  
 show_info = get_info.get_basic_info()            
 print(show_info)                                 
@@ -50,6 +53,8 @@ print(show_height)
 ```
 ## Использование класса Rectangle
 ```bash
+from geometric_figures import Rectangle
+
 find_rec_area = Rectangle(4, 5)                                   
 show_rec_area = find_rec_area.get_rectangle_area()                
 print(f"Площадь прямоугольника: {show_rec_area}")                 
