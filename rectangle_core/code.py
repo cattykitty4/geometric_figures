@@ -3,7 +3,6 @@ import math
 
 
 class Rectangle:
-
     # передаем два аргумента в конструктор класса
     def __init__(self, height: float = 1.0, length: float = 1.0):
         """
@@ -14,7 +13,7 @@ class Rectangle:
 
         Примеры:
         >>> x = Rectangle(1, 2)  # корректное создание объекта
-        >>> y = Rectangle(4, 5)  # корректное создание объекта
+        >>> y = Rectangle(4, 5)     # корректное создание объекта
         >>> j = Rectangle('5', '6') # некорректное создание объекта
         Traceback (most recent call last):
         ...
