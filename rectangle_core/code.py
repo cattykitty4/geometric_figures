@@ -12,7 +12,7 @@ class Rectangle:
         :param length: Ширина прямоугольника
 
         Примеры:
-        >>> x = Rectangle(1, 2)  # корректное создание объекта
+        >>> x = Rectangle(1, 2)     # корректное создание объекта
         >>> y = Rectangle(4, 5)     # корректное создание объекта
         >>> j = Rectangle('5', '6') # некорректное создание объекта
         Traceback (most recent call last):
