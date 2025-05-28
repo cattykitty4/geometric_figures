@@ -39,11 +39,13 @@ class Triangle:
         :return: Возвращает общую информацию о треугольнике. Периметр, полупериметр и площадь по формуле Герона
 
         Пример:
-        >>> x = Triangle(12, 10, 10)
-        >>> x.get_basic_info() # Полупериметр 16, Периметр 32, Площадь 48.
+        >>> x = Triangle(12, 10, 10) # создание экземпляра класса
+        >>> x.get_basic_info()       # Полупериметр 16, Периметр 32, Площадь 48.
         (16.0, 32.0, 48.0)
         """
+        # находим полупериметр
         half_perimeter = (self.a_side + self.b_side + self.c_side) / 2
+        # находим площадь исходя из показателя полупериметра
         area = math.sqrt(half_perimeter *
             (half_perimeter - self.a_side) * (half_perimeter - self.b_side) * (half_perimeter - self.c_side))
 
@@ -59,6 +61,7 @@ class Triangle:
         8.0
         """
         area = self.get_basic_info()[2]
+        
         return (2 * area) / self.a_side
 
 
