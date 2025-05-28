@@ -42,12 +42,13 @@ class Rectangle:
         :return: Площадь прямоугольника
 
         Пример:
-        >>> y = Rectangle(3, 4)  # инициализация экземпляра класса
-        >>> y.get_rectangle_area()
+        >>> y = Rectangle(3, 4)    # инициализация экземпляра класса
+        >>> y.get_rectangle_area() # вызываем пользовательский метод
         12
         """
 
         self.area = self.height * self.length
+        
         return self.area
 
     def get_rectangle_perimeter(self) -> float:
@@ -57,12 +58,13 @@ class Rectangle:
         :return: Периметр прямоугольника
 
         Пример:
-        >>> y = Rectangle(3, 4)
-        >>> y.get_rectangle_perimeter()
+        >>> y = Rectangle(3, 4)         # инициализация экземпляра класса
+        >>> y.get_rectangle_perimeter() # вызываем пользовательский метод
         14
         """
         
         self.perimeter = 2 * (self.length + self.height)
+        
         return self.perimeter
 
     def get_rectangle_diagonal(self) -> float:
@@ -71,8 +73,8 @@ class Rectangle:
         :return: Получаем диагональ
 
         Пример:
-        >>> y = Rectangle(3, 4)
-        >>> y.get_rectangle_diagonal()
+        >>> y = Rectangle(3, 4)        # инициализация экземпляра класса
+        >>> y.get_rectangle_diagonal() # вызываем пользовательский метод
         5.0
         """
         
