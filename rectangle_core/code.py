@@ -34,6 +34,12 @@ class Rectangle:
         # конвертируем аргумент в атрибут экземпляра класса
         self.length = length
 
+    def __str__(self):
+        return f'height = {self.height}, length = {self.length}'
+
+    def __repr__(self):
+        return f'x = {self.__class__.__name__}(12, 10)'
+
     # создаем метод экземпляра класса (т.к. есть self)
     def get_rectangle_area(self) -> float:
         """
@@ -48,7 +54,7 @@ class Rectangle:
         """
 
         self.area = self.height * self.length
-        
+
         return self.area
 
     def get_rectangle_perimeter(self) -> float:
@@ -62,9 +68,9 @@ class Rectangle:
         >>> y.get_rectangle_perimeter() # вызываем пользовательский метод
         14
         """
-        
+
         self.perimeter = 2 * (self.length + self.height)
-        
+
         return self.perimeter
 
     def get_rectangle_diagonal(self) -> float:
@@ -77,12 +83,20 @@ class Rectangle:
         >>> y.get_rectangle_diagonal() # вызываем пользовательский метод
         5.0
         """
-        
+
         half_perimeter = self.get_rectangle_perimeter() / 2  # высчитывается полупериметр прямоугольника
-        
-        rectangle_diagonal = math.sqrt((half_perimeter ** 2) # высчитывается диагональ прямоугольника
+
+        rectangle_diagonal = math.sqrt((half_perimeter ** 2)  # высчитывается диагональ прямоугольника
                                        - (2 * self.get_rectangle_area()))
         return rectangle_diagonal
 
 
 doctest.testmod()  # тестирование примеров, которые находятся в документации
+
+rectangle_instance = Rectangle(12, 10)
+show_human_reading = str(rectangle_instance)
+print(show_human_reading)
+
+rectangle_instance_1 = Rectangle(12, 10)
+show_machine_reading = repr(rectangle_instance_1)
+print(show_machine_reading)
