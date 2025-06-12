@@ -20,7 +20,8 @@ class Triangle:
         """
         # Производится проверка на правило "Неравенства треугольника"
         if a_side + b_side < c_side or a_side + c_side < b_side or b_side + c_side < a_side:
-            raise ValueError('Длина одной стороны треугольника не может превосходить сумму длин двух других его сторон.')
+            raise ValueError(
+                'Длина одной стороны треугольника не может превосходить сумму длин двух других его сторон.')
 
         # Производится проверка на корректность вводимых данных
         if not isinstance(a_side, (int, float)):
@@ -33,6 +34,12 @@ class Triangle:
         self.a_side = a_side
         self.b_side = b_side
         self.c_side = c_side
+
+    def __str__(self):
+        return f'a_side = {self.a_side}, b_side = {self.b_side}, c_side = {self.c_side}'
+
+    def __repr__(self):
+        return f'x = {self.__class__.__name__}(3, 3, 2)'
 
     def get_basic_info(self):
         """
@@ -47,7 +54,8 @@ class Triangle:
         half_perimeter = (self.a_side + self.b_side + self.c_side) / 2
         # находим площадь исходя из показателя полупериметра
         area = math.sqrt(half_perimeter *
-            (half_perimeter - self.a_side) * (half_perimeter - self.b_side) * (half_perimeter - self.c_side))
+                         (half_perimeter - self.a_side) * (half_perimeter - self.b_side) * (
+                                     half_perimeter - self.c_side))
 
         return half_perimeter, half_perimeter * 2, round(area, 2)
 
@@ -61,8 +69,16 @@ class Triangle:
         8.0
         """
         area = self.get_basic_info()[2]
-        
+
         return (2 * area) / self.a_side
 
 
 doctest.testmod()
+
+triangle_example_1 = Triangle(4, 4, 2)
+show_machine_reading = repr(triangle_example_1)
+print(show_machine_reading)
+
+triangle_example = Triangle(4, 4, 2)
+show_human_reading = str(triangle_example)
+print(show_human_reading)
