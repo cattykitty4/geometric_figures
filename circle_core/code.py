@@ -96,11 +96,11 @@ show_user_attr = Circle.__dict__
 print(f'Показывает все атрибуты и методы, которые находятся внутри класса - {show_user_attr}')
 
 
-circle_instance = Circle(3, 45)    # инициализируем экземпляр класса
-human_read_output = str(circle_instance)        # с помощью функции str получаем человекочитаемый результат
+circle_instance = Circle(3, 45)           # инициализируем экземпляр класса
+human_read_output = str(circle_instance)  # с помощью функции str получаем человекочитаемый результат
 print(human_read_output)
 
 
-circle_instance_1 = Circle(4, 24)  # инициализируем экземпляр класса
+circle_instance_1 = Circle(4, 24)               # инициализируем экземпляр класса
 machine_read_output = repr(circle_instance_1)   # с помощью функции repr получаем машиночитаемый результат
 print(machine_read_output)
