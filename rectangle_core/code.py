@@ -35,10 +35,11 @@ class Rectangle:
         self.length = length
 
     def __str__(self):
-        return f'height = {self.height}, length = {self.length}'
+        return f'Этот класс создан для выполнения расчетов для прямоугольника со следующими параметрами: \
+        height = {self.height}, length = {self.length}'
 
     def __repr__(self):
-        return f'x = {self.__class__.__name__}(12, 10)'
+        return f'rectangle_examle = {self.__class__.__name__}({self.height}, {self.length})'
 
     # создаем метод экземпляра класса (т.к. есть self)
     def get_rectangle_area(self) -> float:
