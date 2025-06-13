@@ -36,10 +36,11 @@ class Triangle:
         self.c_side = c_side
 
     def __str__(self):
-        return f'a_side = {self.a_side}, b_side = {self.b_side}, c_side = {self.c_side}'
+        return f'Этот класс создан для выполнения расчетов для треугольника со следующими параметрами: \
+        a_side = {self.a_side}, b_side = {self.b_side}, c_side = {self.c_side}'
 
     def __repr__(self):
-        return f'x = {self.__class__.__name__}(3, 3, 2)'
+        return f'triangle_example = {self.__class__.__name__}({self.a_side}, {self.b_side}, {self.c_side})'
 
     def get_basic_info(self):
         """
