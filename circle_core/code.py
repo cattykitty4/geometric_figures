@@ -33,11 +33,12 @@ class Circle:
 
     def __str__(self):
         # метод для человекочитаемого вывода Circle()
-        return f'radius = {self.radius}, angle = {math.degrees(self.angle):.1f}°'
+        return f'Этот класс создан для выполнения расчетов для окружности со следующими параметрами: \
+        radius = {self.radius}, angle = {math.degrees(self.angle):.1f}°'
 
     def __repr__(self):
         # метод для воссоздания экземляра класса Circle()
-        return f'x = Circle({self.radius}, {math.degrees(self.angle):.1f})'
+        return f'circle_example = {self.__class__.__name__}({self.radius}, {math.degrees(self.angle):.1f})'
 
     def circle_perimeter(self) -> float:
         """
