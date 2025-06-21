@@ -3,6 +3,8 @@ import math
 
 
 class Rectangle:
+    amount_of_callings = 0
+
     # передаем два аргумента в конструктор класса
     def __init__(self, height: float = 1.0, length: float = 1.0):
         """
@@ -33,6 +35,13 @@ class Rectangle:
             raise ValueError('Сторона прямоугольника не может быть равна или меньше нуля')
         # конвертируем аргумент в атрибут экземпляра класса
         self.length = length
+
+        self.add_one_to_amount_of_callings()
+
+    @classmethod
+    def add_one_to_amount_of_callings(cls):
+        # метод класса для подсчета количества созданных экземпляров класса
+        cls.amount_of_callings += 1
 
     def __str__(self):
         return f'Этот класс создан для выполнения расчетов для прямоугольника со следующими параметрами: \
@@ -101,3 +110,5 @@ print(show_human_reading)
 rectangle_instance_1 = Rectangle(12, 10)
 show_machine_reading = repr(rectangle_instance_1)
 print(show_machine_reading)
+
+print(Rectangle.amount_of_callings)
