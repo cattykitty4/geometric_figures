@@ -4,6 +4,8 @@ import doctest
 
 class Circle:
 
+    count_of_callings = 0
+
     # передаем два аргумента в конструктор класса. Аргументы имеют значения "по умолчанию".
     def __init__(self, radius: float = 1, angle: float = 0):
         """
@@ -30,6 +32,13 @@ class Circle:
         if angle < 0:
             self.angle = angle * (-1)
         self.angle = math.radians(angle)
+
+        self.add_one_to_amount_of_callings()
+
+    @classmethod
+    def add_one_to_amount_of_callings(cls):
+        # метод класса для подсчета созданных экземпляров класса
+        cls.count_of_callings += 1
 
     def __str__(self):
         # метод для человекочитаемого вывода Circle()
@@ -105,3 +114,5 @@ print(human_read_output)
 circle_instance_1 = Circle(4, 24)               # инициализируем экземпляр класса
 machine_read_output = repr(circle_instance_1)   # с помощью функции repr получаем машиночитаемый результат
 print(machine_read_output)
+
+print(Circle.count_of_callings)
