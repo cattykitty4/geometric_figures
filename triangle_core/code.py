@@ -3,6 +3,8 @@ import math
 
 
 class Triangle:
+    amount_of_callings = 0
+
     def __init__(self, a_side: float, b_side: float, c_side: float):
         """
         Создание и подготовка к работе объекта Треугольник.
@@ -34,6 +36,11 @@ class Triangle:
         self.a_side = a_side
         self.b_side = b_side
         self.c_side = c_side
+        self.add_one_to_amount_of_callings()
+
+    @classmethod
+    def add_one_to_amount_of_callings(cls):
+        cls.amount_of_callings += 1
 
     def __str__(self):
         return f'Этот класс создан для выполнения расчетов для треугольника со следующими параметрами: \
@@ -83,3 +90,5 @@ print(show_machine_reading)
 triangle_example = Triangle(4, 4, 2)
 show_human_reading = str(triangle_example)
 print(show_human_reading)
+
+print(Triangle.amount_of_callings)
