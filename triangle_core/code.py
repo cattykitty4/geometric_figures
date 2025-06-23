@@ -1,3 +1,4 @@
+import matplotlib.pyplot as plt
 import doctest
 import math
 
@@ -38,16 +39,31 @@ class Triangle:
         self.c_side = c_side
         self.add_one_to_amount_of_callings()
 
+    @staticmethod
+    def show_triangle(a_side: float, b_side: float, c_side: float):
+        x1, y1 = 0, 0
+        # Координаты второй вершины (по оси X)
+        x2, y2 = a_side, 0
+
+        # Вычисляем угол между сторонами a и b
+        angle = math.acos((a_side ** 2 + b_side ** 2 - c_side ** 2) / (2 * a_side * b_side))
+
+        # Координаты третьей вершины
+        x3 = b_side * math.cos(angle)
+        y3 = b_side * math.sin(angle)
+
+        # Рисуем треугольник
+        plt.fill([x1, x2, x3], [y1, y2, y3], 'blue', alpha=0.5)
+        plt.plot([x1, x2, x3, x1], [y1, y2, y3, y1], 'k-')  # Контур
+
+        plt.title(f'Треугольник со сторонами {a_side}, {b_side}, {c_side}')
+        plt.axis('equal')
+        plt.grid()
+        plt.show()
+
     @classmethod
     def add_one_to_amount_of_callings(cls):
         cls.amount_of_callings += 1
-
-    def __str__(self):
-        return f'Этот класс создан для выполнения расчетов для треугольника со следующими параметрами: \
-        a_side = {self.a_side}, b_side = {self.b_side}, c_side = {self.c_side}'
-
-    def __repr__(self):
-        return f'triangle_example = {self.__class__.__name__}({self.a_side}, {self.b_side}, {self.c_side})'
 
     def get_basic_info(self):
         """
@@ -63,7 +79,7 @@ class Triangle:
         # находим площадь исходя из показателя полупериметра
         area = math.sqrt(half_perimeter *
                          (half_perimeter - self.a_side) * (half_perimeter - self.b_side) * (
-                                     half_perimeter - self.c_side))
+                                 half_perimeter - self.c_side))
 
         return half_perimeter, half_perimeter * 2, round(area, 2)
 
@@ -80,15 +96,24 @@ class Triangle:
 
         return (2 * area) / self.a_side
 
+    def __str__(self):
+        return f'Этот класс создан для выполнения расчетов для треугольника со следующими параметрами: \
+        a_side = {self.a_side}, b_side = {self.b_side}, c_side = {self.c_side}'
+
+    def __repr__(self):
+        return f'triangle_example = {self.__class__.__name__}({self.a_side}, {self.b_side}, {self.c_side})'
+
 
 doctest.testmod()
 
 triangle_example_1 = Triangle(4, 4, 2)
-show_machine_reading = repr(triangle_example_1)
-print(show_machine_reading)
-
-triangle_example = Triangle(4, 4, 2)
-show_human_reading = str(triangle_example)
-print(show_human_reading)
+# show_machine_reading = repr(triangle_example_1)
+# print(show_machine_reading)
+#
+# triangle_example = Triangle(4, 4, 2)
+# show_human_reading = str(triangle_example)
+# print(show_human_reading)
 
 print(Triangle.amount_of_callings)
+x = Triangle.show_triangle(4, 4, 4)
+print(x)
